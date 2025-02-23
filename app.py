@@ -32,10 +32,11 @@ model, scaler = load_model()
 家庭月收入_options = {0: "0-2000", 1: "2001-5000", 2: "5001-8000", 3: "8000+"}
 创伤时恐惧程度_options = {0: "无", 1: "轻度", 2: "中度", 3: "重度"}
 吸烟状态_options = {0: "不吸烟", 1: "偶尔", 2: "经常"}
+心理负担_options = {0: "没有", 1: "稍有", 2: "中度", 3: "较重", 4: "严重"}
 
 # 设置Web界面
 st.title("PTSD 预测系统")
-st.write("创伤后3个月PTSD预测")
+st.write("创伤后6个月PTSD预测")
 
 # 获取用户输入的特征
 ASDS = st.number_input("ASDS (分)", value=50.0, help="单位: 分，最高95分")
@@ -50,7 +51,7 @@ ASDS = st.number_input("ASDS (分)", value=50.0, help="单位: 分，最高95分
 AST_ALT = st.number_input("AST/ALT", value=0.5, help="范围 0 - 100")
 A_G = st.number_input("A/G", value=0.5, help="范围 0 - 3.0")
 血红蛋白 = st.number_input("血红蛋白 (g/dL)", value=12.0, help="单位: g/dL")
-心理负担 = st.number_input("心理负担", value=50.0, help="单位: 分")
+心理负担 = st.selectbox("心理负担", options=list(心理负担_options.keys()), format_func=lambda x: 心理负担_options[x])
 单核细胞绝对值 = st.number_input("单核细胞绝对值 (10^9/L)", value=50.0, help="单位: 10^9/L")
 脉搏 = st.number_input("脉搏 (bpm)", value=70.0, help="单位: bpm")
 创伤时恐惧程度 = st.selectbox("创伤时恐惧程度", options=list(创伤时恐惧程度_options.keys()), format_func=lambda x: 创伤时恐惧程度_options[x])
