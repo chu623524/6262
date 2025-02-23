@@ -34,9 +34,29 @@ model, scaler = load_model()
 吸烟状态_options = {0: "不吸烟", 1: "偶尔", 2: "经常"}
 心理负担_options = {0: "没有", 1: "稍有", 2: "中度", 3: "较重", 4: "严重"}
 
-# 设置Web界面
-st.title("PTSD 预测系统")
-st.write("创伤后6个月PTSD预测")
+# 设置页面样式
+st.markdown(
+    """
+    <style>
+        .title {
+            color: #4CAF50;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .subtitle {
+            color: #555;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# 页面标题
+st.markdown('<p class="title">PTSD 预测系统</p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">创伤后6个月 PTSD 预测</p>', unsafe_allow_html=True)
 
 # 获取用户输入的特征
 ASDS = st.number_input("ASDS (分)", value=50.0, help="单位: 分，最高95分")
