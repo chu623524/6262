@@ -113,4 +113,4 @@ if st.button("预测"):
     
     # 输出结果
     st.write(f"**PTSD 概率:** {prediction_prob:.4f}")
-    st.write(f"**预测结果:** {prediction}"),其他不变，增加页面的对比度，因为我要截图放到毕业论文中
+    st.write(f"**预测结果:** {prediction}"),
