@@ -38,16 +38,41 @@ model, scaler = load_model()
 st.markdown(
     """
     <style>
+        body {
+            color: #000000;  /* 黑色文本 */
+            background-color: #FFFFFF;  /* 白色背景 */
+        }
         .title {
-            color: #4CAF50;
+            color: #000000;  /* 黑色标题 */
             font-size: 36px;
             font-weight: bold;
             text-align: center;
         }
         .subtitle {
-            color: #555;
+            color: #000000;  /* 黑色副标题 */
             font-size: 24px;
             text-align: center;
+        }
+        .stNumberInput, .stSelectbox, .stButton {
+            background-color: #F0F0F0;  /* 浅灰色背景 */
+            color: #000000;  /* 黑色文本 */
+            border: 1px solid #000000;  /* 黑色边框 */
+        }
+        .stButton button {
+            background-color: #4CAF50;  /* 绿色按钮 */
+            color: #FFFFFF;  /* 白色文本 */
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .stButton button:hover {
+            background-color: #45a049;  /* 深绿色悬停 */
         }
     </style>
     """,
